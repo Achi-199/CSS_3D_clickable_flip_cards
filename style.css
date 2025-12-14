@@ -1,4 +1,3 @@
-/* --- Global Styles --- */
 * {
   box-sizing: border-box;
 }
@@ -10,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #121212;
   background-image: radial-gradient(circle at 50% 50%, #1e2029 0%, #121212 100%);
 }
@@ -21,14 +20,12 @@ body {
   justify-content: center;
 }
 
-/* --- Card Container --- */
 .card {
   width: 380px;
   height: 480px;
   margin: 1em;
   perspective: 1500px;
 }
-
 .card .content {
   position: relative;
   width: 100%;
@@ -37,16 +34,13 @@ body {
   transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
 }
 
-/* --- Flip Mechanism --- */
 .more {
   display: none;
 }
-
 .more:checked ~ .content {
   transform: rotateY(180deg);
 }
 
-/* --- Shared Face Styles --- */
 .front,
 .back {
   position: absolute;
@@ -60,7 +54,6 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
 .front .inner,
 .back .inner {
   height: 100%;
@@ -69,14 +62,12 @@ body {
   transform: translateZ(60px) scale(0.94);
 }
 
-/* --- Front Face --- */
 .front {
   background-size: cover;
   background-position: center;
 }
-
 .front:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -84,21 +75,14 @@ body {
   height: 100%;
   display: block;
   backface-visibility: hidden;
-  background: linear-gradient(
-    180deg,
-    rgba(11, 13, 21, 0.1) 0%, 
-    rgba(11, 13, 21, 0.8) 60%,
-    rgba(11, 13, 21, 0.95) 100%
-  );
+  background: linear-gradient(180deg, rgba(11, 13, 21, 0.1) 0%, rgba(11, 13, 21, 0.8) 60%, rgba(11, 13, 21, 0.95) 100%);
 }
-
 .front .inner {
   grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
   justify-items: center;
   position: relative;
   z-index: 2;
 }
-
 .front h2 {
   grid-row: 2;
   margin-bottom: 0.3em;
@@ -107,35 +91,30 @@ body {
   color: #fff;
   font-weight: 700;
   font-size: 1.8rem;
-  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5); 
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
 }
-
 .front .rating {
   grid-row: 3;
-  color: #bc13fe; 
+  color: #bc13fe;
   font-size: 16px;
   display: flex;
   flex-flow: row nowrap;
 }
-
 .front .rating i {
   margin: 0 2px;
 }
 
-/* --- Back Face --- */
 .back {
   transform: rotateY(180deg);
   background-color: #1a1c29;
-  border: 1px solid #343852;
+  border: 1px solid #2e3148;
 }
-
 .back .inner {
   grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
   grid-template-columns: repeat(4, auto);
   grid-column-gap: 0.5em;
   justify-items: center;
 }
-
 .back .info {
   position: relative;
   display: flex;
@@ -144,9 +123,8 @@ body {
   color: #ececec;
   grid-row: 3;
 }
-
 .back .info:not(:first-of-type):before {
-  content: '';
+  content: "";
   position: absolute;
   left: -0.5em;
   top: 10%;
@@ -154,23 +132,19 @@ body {
   width: 1px;
   background-color: rgba(255, 255, 255, 0.1);
 }
-
 .back .info span {
   font-size: 1.5em;
   font-weight: 700;
-  color: #00f2ff; 
+  color: #00f2ff;
 }
-
 .back .info .icon {
   margin-top: 5px;
   text-align: center;
 }
-
 .back .info .icon i {
   font-size: 1em;
   color: rgba(255, 255, 255, 0.6);
 }
-
 .back .info .icon span {
   display: block;
   margin-top: 3px;
@@ -179,7 +153,6 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
 }
-
 .back .description {
   grid-row: 5;
   grid-column: 1/-1;
@@ -187,18 +160,15 @@ body {
   font-weight: 400;
   line-height: 1.5em;
   overflow-y: auto;
-  color: #cfcfcf;
+  color: lightgray;
 }
-
 .back .description ul {
   padding-left: 1.2em;
   margin-top: 0.5em;
 }
-
 .back .description ul li {
   margin-bottom: 0.3em;
 }
-
 .back .location,
 .back .price {
   font-weight: 600;
@@ -208,25 +178,21 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 .back .location {
   grid-column: 1/3;
   justify-self: left;
   color: rgba(255, 255, 255, 0.5);
 }
-
 .back .price {
   grid-column: 3/-1;
   justify-self: right;
   font-size: 1.2em;
 }
-
 .back .button {
   grid-column: 1/-1;
   justify-self: center;
 }
 
-/* --- Button Styles --- */
 .button {
   grid-row: -1;
   text-transform: uppercase;
@@ -248,14 +214,12 @@ body {
   transition: 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
 }
-
 .button:hover {
   background-color: #00f2ff;
   box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
   color: #121212;
   border-color: #00f2ff;
 }
-
 .button.return {
   line-height: 3em;
   color: #00f2ff;
@@ -263,7 +227,6 @@ body {
   text-shadow: none;
   box-shadow: none;
 }
-
 .button.return:hover {
   background-color: transparent;
   color: #fff;
@@ -271,17 +234,19 @@ body {
   transform: scale(1.1) translateZ(10px);
 }
 
-/* --- Scrollbar Styling --- */
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #bc13fe;
   border-radius: 2px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #d46aff;
+  background: #ca46fe;
 }
